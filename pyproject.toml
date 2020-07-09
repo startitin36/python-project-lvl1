@@ -8,8 +8,8 @@ packages = [
 ]
 
 name = "startitin36_brain_games"
-version = "0.5.1"
-description = ""
+version = "0.5.5"
+description = "My first test project on Hexlet"
 authors = ["Leto_RUS <hahmatnur@gmail.com>"]
 
 [tool.poetry.dependencies]
