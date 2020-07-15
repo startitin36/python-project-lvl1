@@ -1,6 +1,7 @@
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
+brain-calc = "brain_games.scripts.brain_calc:main"
 
 [tool.poetry]
 packages = [
@@ -8,7 +9,7 @@ packages = [
 ]
 
 name = "startitin36_brain_games"
-version = "0.5.5"
+version = "0.6.0"
 description = "My first test project on Hexlet"
 authors = ["Leto_RUS <hahmatnur@gmail.com>"]
 

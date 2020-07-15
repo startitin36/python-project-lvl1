@@ -6,6 +6,7 @@ name = ''
 
 
 def even(name):
+    print('Answer "yes" if number even or answer "no"')
     cor_ans = 0
     while cor_ans < 3:
         num = randint(1, 100)
@@ -15,12 +16,13 @@ def even(name):
             print('Correct!')
             cor_ans += 1
         else:
-            print("'{}' is wrong answer ;(".format(answ))
+            if answ == 'yes':
+                show_ans = 'no'
+            else:
+                show_ans = 'yes'
+            print("'{}' is wrong answer ;(. Correct answer was '{}'".format(answ, show_ans))
             break
-    if cor_ans == 3:
-        print('Congratulations, {}!'.format(name))
-    else:
-        print("Let's try again, {}!".format(name))
+    return cor_ans
 
 
 if __name__ == '__main__':
