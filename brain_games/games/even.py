@@ -8,6 +8,7 @@ name = ''
 def even(name):
     print('Answer "yes" if number even or answer "no"')
     cor_ans = 0
+    wrong_msg = 'is wrong answer ;(. Correct answer was'
     while cor_ans < 3:
         num = randint(1, 100)
         print('Question: {}'.format(num))
@@ -20,7 +21,7 @@ def even(name):
                 show_ans = 'no'
             else:
                 show_ans = 'yes'
-            print("'{}' is wrong answer ;(. Correct answer was '{}'".format(answ, show_ans))
+            print("'{}' {} '{}'".format(answ, wrong_msg, show_ans))
             break
     return cor_ans
 

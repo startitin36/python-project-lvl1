@@ -14,7 +14,7 @@ def main():
     name = welcome_user()
     print('Please,  choise your game by pressing suitable number:\n')
     game = prompt.string('1. Brain-even\n2. Brain-calc\n3. in progress...\n')
-    cor_ans =  0
+    cor_ans = 0
     if game == '1':
         cor_ans = even(name)
     elif game == '2':
@@ -26,7 +26,8 @@ def main():
     if cor_ans == 3:
         print('Congratulations, {}!'.format(name))
     else:
-        print("Let's try agAin, {}!".format(name)) 
+        print("Let's try again, {}!".format(name))
+
 
 if __name__ == '__main__':
     main()
