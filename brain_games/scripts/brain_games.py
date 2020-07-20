@@ -2,24 +2,32 @@
 
 
 from brain_games.scripts.cli import welcome_user
-from brain_games.games.even import even
-from brain_games.games.calc import calc
+import brain_games.games.even
+import brain_games.games.calc
+import brain_games.games.gcd
 import prompt
 
-name = ''
+
+greeting_msg = 'Welcome to the Brain Games!'
+choice_msg = 'Please,  choise your game by pressing suitable number:'
 
 
 def main():
-    print('Welcome to the Brain Games!\n')
+    print(greeting_msg, '\n')
     name = welcome_user()
-    print('Please,  choise your game by pressing suitable number:\n')
-    game = prompt.string('1. Brain-even\n2. Brain-calc\n3. in progress...\n')
+    print(choice_msg, '\n')
+    game = prompt.string('1. Even\n2. Calc\n3. GCD\n4. in progress...\n')
     cor_ans = 0
     if game == '1':
-        cor_ans = even(name)
+        print(brain_games.games.even.intro_even, '\n')
+        cor_ans = brain_games.games.even.even(name)
     elif game == '2':
-        cor_ans = calc(name)
+        print(brain_games.games.calc.intro_calc, '\n')
+        cor_ans = brain_games.games.calc.calc(name)
     elif game == '3':
+        print(brain_games.games.gcd.intro_gcd, '\n')
+        cor_ans = brain_games.games.gcd.gcd_game(name)
+    elif game == '4':
         print('Will be ready soon... Stay tuned :)')
     else:
         print('Wrong input, {}. Try again!'.format(name))

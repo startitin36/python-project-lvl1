@@ -3,8 +3,9 @@ from random import randint
 
 
 name = ''
-intro_even = 'Answer "yes" if number even or answer "no"'
+intro_even = 'Answer "yes" if number even or answer "no"' 
 wrong_msg = 'is wrong answer ;(. Correct answer was'
+    
 
 
 def even(name):

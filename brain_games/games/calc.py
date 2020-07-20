@@ -2,7 +2,9 @@ import prompt
 from random import randint
 from random import choice
 
+
 name = ''
+intro_calc = 'What is the result of expression?'
 
 
 def calc(name):
