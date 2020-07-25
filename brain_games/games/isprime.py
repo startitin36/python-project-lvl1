@@ -3,11 +3,11 @@ from random import randint
 
 
 name = ''
-intro_prime = 'Answer "yes" if given number prime. Otherwise answer "no".'
-wrong_msg = 'is wrong answer ;(. Correct answer was'
+INTRO_PRIME = 'Answer "yes" if given number prime. Otherwise answer "no".'
+WRONG_MSG = 'is wrong answer ;(. Correct answer was'
 
 
-def prime(name):
+def main(name):
     cor_ans = 0
     while cor_ans < 3:
         num = randint(1, 100)
@@ -28,14 +28,11 @@ def prime(name):
                 print('Correct')
                 cor_ans += 1
             else:
-                if show_ans == 'yes':
-                    print("'{}' {} '{}'".format(ans, wrong_msg, show_ans))
-                else:
-                    print("'{}' {} '{}'".format(ans, wrong_msg, show_ans))
+                print("'{}' {} '{}'".format(ans, WRONG_MSG, show_ans))
                 break
     return cor_ans
 
 
 if __name__ == '__main__':
-    print(intro_prime)
-    prime(name)
+    print(INTRO_PRIME)
+    main(name)

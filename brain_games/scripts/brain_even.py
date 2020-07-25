@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 
 
-from brain_games.games.even import even, intro_even
+import brain_games.games.even
 from brain_games.scripts.cli import welcome_user
 
 
-greeting_msg = 'Welcome to the Brain Games!'
-win_msg = 'Congratulatins, {}!'
-lose_msg = "Let's try again, {}!"
+GREETING_MSG = 'Welcome to the Brain Games!'
+WIN_MSG = 'Congratulatins, {}!'
+LOSE_MSG = "Let's try again, {}!"
 
 
 def main():
-    print(greeting_msg, '\n')
+    print(GREETING_MSG, '\n')
     name = welcome_user()
-    print(intro_even, '\n')
-    cor_ans = even(name)
+    print(brain_games.games.even.INTRO_EVEN, '\n')
+    cor_ans = brain_games.games.even.main(name)
     if cor_ans == 3:
-        print(win_msg.format(name))
+        print(WIN_MSG.format(name))
     else:
-        print(lose_msg.format(name))
+        print(LOSE_MSG.format(name))
 
 
 if __name__ == '__main__':

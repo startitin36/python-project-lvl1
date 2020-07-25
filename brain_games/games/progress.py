@@ -3,12 +3,12 @@ from random import randint
 
 
 name = ''
-intro_progress = 'What number is missing in the progression?'
+INTRO_PROGRESS = 'What number is missing in the progression?'
+WRONG_MSG = 'is wrong answer :(. Correct answer was'
 
 
-def progress(name):
+def main(name):
     cor_ans = 0
-    wrong_msg = 'is wrong answer :(. Correct answer was'
     mis_num = '..'
     while cor_ans < 3:
         quest_str = ''
@@ -31,10 +31,11 @@ def progress(name):
             print('Correct!')
             cor_ans += 1
         else:
-            print("'{}' {} '{}'".format(ans, wrong_msg, correct))
+            print("'{}' {} '{}'".format(ans, WRONG_MSG, correct))
             break
     return cor_ans
 
 
 if __name__ == '__main__':
-    progress(name)
+    print(INTRO_PROGRESS, '\n')
+    main(name)

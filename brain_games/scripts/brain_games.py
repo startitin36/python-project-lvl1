@@ -10,32 +10,32 @@ import brain_games.games.isprime
 import prompt
 
 
-greeting_msg = 'Welcome to the Brain Games!'
-choice_msg = 'Please,  choise your game by pressing suitable number:'
-games = '1. Even\n2. Calc\n3. GCD\n4. Progression\n5. IsPrime\n'
+GREETING_MSG = 'Welcome to the Brain Games!'
+CHOICE_MSG = 'Please,  choise your game by pressing suitable number:'
+GAMES = '1. Even\n2. Calc\n3. GCD\n4. Progression\n5. IsPrime\n'
 
 
 def main():
-    print(greeting_msg, '\n')
+    print(GREETING_MSG, '\n')
     name = welcome_user()
-    print(choice_msg, '\n')
-    game = prompt.string(games)
+    print(CHOICE_MSG, '\n')
+    game = prompt.string(GAMES)
     cor_ans = 0
     if game == '1':
-        print(brain_games.games.even.intro_even, '\n')
-        cor_ans = brain_games.games.even.even(name)
+        print(brain_games.games.even.INTRO_EVEN, '\n')
+        cor_ans = brain_games.games.even.main(name)
     elif game == '2':
-        print(brain_games.games.calc.intro_calc, '\n')
-        cor_ans = brain_games.games.calc.calc(name)
+        print(brain_games.games.calc.INTRO_CALC, '\n')
+        cor_ans = brain_games.games.calc.main(name)
     elif game == '3':
-        print(brain_games.games.gcd.intro_gcd, '\n')
-        cor_ans = brain_games.games.gcd.gcd_game(name)
+        print(brain_games.games.gcd.INTRO_GCD, '\n')
+        cor_ans = brain_games.games.gcd.main(name)
     elif game == '4':
-        print(brain_games.games.progress.intro_progress, '\n')
-        cor_ans = brain_games.games.progress.progress(name)
+        print(brain_games.games.progress.INTRO_PROGRESS, '\n')
+        cor_ans = brain_games.games.progress.main(name)
     elif game == '5':
-        print(brain_games.games.isprime.intro_prime, '\n')
-        cor_ans = brain_games.games.isprime.prime(name)
+        print(brain_games.games.isprime.INTRO_PRIME, '\n')
+        cor_ans = brain_games.games.isprime.main(name)
     else:
         print('Wrong input, {}. Try again!'.format(name))
     if cor_ans == 3:

@@ -3,29 +3,29 @@ from random import randint
 
 
 name = ''
-intro_even = 'Answer "yes" if number even or answer "no"'
-wrong_msg = 'is wrong answer ;(. Correct answer was'
+INTRO_EVEN = 'Answer "yes" if number even or answer "no"'
+WRONG_MSG = 'is wrong answer ;(. Correct answer was'
 
 
-def even(name):
+def main(name):
     cor_ans = 0
     while cor_ans < 3:
         num = randint(1, 100)
         print('Question: {}'.format(num))
-        answ = prompt.string('Your answer: ')
-        if (num % 2 == 0 and answ == 'yes') or (num % 2 == 1 and answ == 'no'):
+        ans = prompt.string('Your answer: ')
+        if (num % 2 == 0 and ans == 'yes') or (num % 2 == 1 and ans == 'no'):
             print('Correct!')
             cor_ans += 1
         else:
-            if answ == 'yes':
+            if ans == 'yes':
                 show_ans = 'no'
             else:
                 show_ans = 'yes'
-            print("'{}' {} '{}'".format(answ, wrong_msg, show_ans))
+            print("'{}' {} '{}'".format(ans, WRONG_MSG, show_ans))
             break
     return cor_ans
 
 
 if __name__ == '__main__':
-    print(intro_even)
-    even(name)
+    print(INTRO_EVEN)
+    main(name)

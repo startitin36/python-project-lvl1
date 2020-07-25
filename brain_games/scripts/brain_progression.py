@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 
 
-from brain_games.games.progress import progress, intro_progress
+import brain_games.games.progress
 from brain_games.scripts.cli import welcome_user
 
 
-greeting_msg = 'Welcome to the Brain Games!'
-win_msg = 'Congratulatins, {}!'
-lose_msg = "Let's try again, {}!"
+GREETING_MSG = 'Welcome to the Brain Games!'
+WIN_MSG = 'Congratulatins, {}!'
+LOSE_MSG = "Let's try again, {}!"
 
 
 def main():
-    print(greeting_msg, '\n')
+    print(GREETING_MSG, '\n')
     name = welcome_user()
-    print(intro_progress, '\n')
-    cor_ans = progress(name)
+    print(brain_games.games.progress.INTRO_PROGRESS, '\n')
+    cor_ans = brain_games.games.progress.main(name)
     if cor_ans == 3:
-        print(win_msg.format(name))
+        print(WIN_MSG.format(name))
     else:
-        print(lose_msg.format(name))
+        print(LOSE_MSG.format(name))
 
 
 if __name__ == '__main__':
