@@ -1,24 +1,12 @@
 #!/usr/bin/env python3
 
 
-import brain_games.games.isprime
-from brain_games.scripts.cli import welcome_user
-
-
-GREETING_MSG = 'Welcome to the Brain Games!'
-WIN_MSG = 'Congratulatins, {}!'
-LOSE_MSG = "Let's try again, {}!"
+import brain_games.scripts.engine
+from brain_games.games.isprime import isprime, INTRO
 
 
 def main():
-    print(GREETING_MSG, '\n')
-    name = welcome_user()
-    print(brain_games.games.isprime.INTRO_PRIME, '\n')
-    cor_ans = brain_games.games.isprime.main(name)
-    if cor_ans == 3:
-        print(WIN_MSG.format(name))
-    else:
-        print(LOSE_MSG.format(name))
+    brain_games.scripts.engine.main(INTRO, isprime)
 
 
 if __name__ == '__main__':

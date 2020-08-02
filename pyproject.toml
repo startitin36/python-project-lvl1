@@ -18,7 +18,7 @@ classifiers = [
 repository = "https://github.com/startitin36/python-project-lvl1"
 
 name = "startitin36_brain_games"
-version = "0.9.2"
+version = "0.9.3"
 description = "My first test project on Hexlet"
 authors = ["Leto_RUS <hahmatnur@gmail.com>"]
 
