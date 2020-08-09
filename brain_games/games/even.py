@@ -4,11 +4,11 @@ from random import randint
 INTRO = 'Answer "yes" if number even or answer "no"'
 
 
-def even():
+def main():
     num = randint(1, 100)
-    quest_str = str(num)
+    question = str(num)
     if num % 2 == 0:
         result = 'yes'
     else:
         result = 'no'
-    return (quest_str, str(result))
+    return (question, str(result))

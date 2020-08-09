@@ -14,8 +14,8 @@ GREETING_MSG = 'Welcome to the Brain Games!'
 def engine(game, name):
     cor_ans = 0
     while cor_ans < TRIES:
-        (quest_str, result) = game()
-        print(quest_str)
+        (question, result) = game.main()
+        print(question)
         ans = prompt.string(ANS_REQ)
         if ans == result:
             print(CORRECT)
@@ -28,9 +28,9 @@ def engine(game, name):
             break
 
 
-def main(INTRO, game):
+def main(game):
     print(GREETING_MSG)
-    print(INTRO, '\n')
+    print(game.INTRO, '\n')
     name = welcome_user()
     engine(game, name)
 

@@ -2,21 +2,24 @@ from random import randint
 
 
 INTRO = 'Answer "yes" if given number prime. Otherwise answer "no".'
+START_NUM = 2
+END_NUM = 100
 
 
-def isprime():
-    num = randint(1, 100)
-    div = 3
-    quest_str = str(num)
-    if num == 2:
+def main():
+    num = randint(START_NUM, END_NUM)
+    question = str(num)
+    if is_prime(num):
         result = 'yes'
-    elif (num % 2 == 0 or num == 1):
-        result = 'no'
     else:
-        while div * div <= num and num % div != 0:
-            div += 2
-            if (div * div <= num or num % div == 0):
-                result = 'no'
-            else:
-                result = 'yes'
-    return (quest_str, result)
+        result = 'no'
+    return (question, result)
+
+
+def is_prime(num):
+    if num % 2 == 0:
+        return num == 2
+    div = 3
+    while div * div <= num and num % div != 0:
+        div += 2
+    return div * div > num
