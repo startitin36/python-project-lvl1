@@ -12,5 +12,5 @@ info:
 	poetry show
 
 publish:
-	poetry version $(V)	
-	poetry publish --build -r Hexlet --username Leto_RUS
+	poetry version $(V)
+	poetry publish --build -r Hexlet

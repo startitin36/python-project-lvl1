@@ -5,7 +5,7 @@ from random import choice
 INTRO = 'What is the result of the expression?'
 
 
-def main():
+def get_game_data():
     operations = ['*', '+', '-']
     n1 = randint(1, 100)
     n2 = randint(1, 100)
@@ -20,5 +20,3 @@ def main():
     return (question, str(result))
 
 
-if __name__ == '__main__':
-    main()

@@ -6,13 +6,12 @@ START_NUM = 2
 END_NUM = 100
 
 
-def main():
+def get_game_data():
+    result = 'no'
     num = randint(START_NUM, END_NUM)
     question = str(num)
     if is_prime(num):
         result = 'yes'
-    else:
-        result = 'no'
     return (question, result)
 
 

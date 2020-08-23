@@ -2,11 +2,11 @@
 
 
 import brain_games.engine
-from brain_games.games import progress
+from brain_games.games import progression
 
 
 def main():
-    brain_games.engine.main(progress)
+    brain_games.engine.main(progression)
 
 
 if __name__ == '__main__':

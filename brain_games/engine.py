@@ -1,38 +1,42 @@
 import prompt
-from brain_games.scripts.cli import welcome_user
 
 
-WRONG_MSG = "'{}' is wrong answer :(. Correct answer was '{}'."
-TRY_MSG = "Let's try again, {}!"
-WIN_MSG = 'Congratulations, {}!'
-TRIES = 3
-CORRECT = 'Correct!'
-ANS_REQ = 'Your answer: '
-GREETING_MSG = 'Welcome to the Brain Games!'
+WRONG_ANSWER = "'{}' is wrong answer :(. Correct answer was '{}'."
+SUGGESTION_TO_TRY = "Let's try again, {}!"
+CONGRAT_ON_WINNING = 'Congratulations, {}!'
+CORRECT_ANSWERS_TO_WIN = 3
+CORRECT_ANSWER = 'Correct!'
+ANSWER_REQUIRING = 'Your answer: '
+WELCOME = 'Welcome to the Brain Games!'
 
 
-def engine(game, name):
+def engine(game):
+    print(WELCOME)
+    print(game.INTRO, '\n')
+    name = welcome_user()
     cor_ans = 0
-    while cor_ans < TRIES:
-        (question, result) = game.main()
+    while cor_ans < CORRECT_ANSWERS_TO_WIN:
+        (question, result) = game.get_game_data()
         print(question)
-        ans = prompt.string(ANS_REQ)
+        ans = prompt.string(ANSWER_REQUIRING)
         if ans == result:
-            print(CORRECT)
+            print(CORRECT_ANSWER)
             cor_ans += 1
-            if cor_ans == TRIES:
-                print(WIN_MSG.format(name))
+            if cor_ans == CORRECT_ANSWERS_TO_WIN:
+                print(CONGRAT_ON_WINNING.format(name))
         else:
-            print(WRONG_MSG.format(ans, result))
-            print(TRY_MSG.format(name))
+            print(WRONG_ANSWER.format(ans, result))
+            print(SUGGESTION_TO_TRY.format(name))
             break
+
+def welcome_user():
+    name = prompt.string('May I have your name? ')
+    print('Hello, {}!\n'.format(name))
+    return name
 
 
 def main(game):
-    print(GREETING_MSG)
-    print(game.INTRO, '\n')
-    name = welcome_user()
-    engine(game, name)
+    engine(game)
 
 
 if __name__ == '__main__':

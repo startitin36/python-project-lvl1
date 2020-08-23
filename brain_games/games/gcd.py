@@ -7,7 +7,7 @@ START_NUM = 1
 END_NUM = 100
 
 
-def main():
+def get_game_data():
     n1 = randint(START_NUM, END_NUM)
     n2 = randint(START_NUM, END_NUM)
     question = str(n1) + ' ' + str(n2)
