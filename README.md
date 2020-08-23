@@ -1,10 +1,10 @@
 # python-project-lvl1
-#Brain-games is a package of 5 games:
-#  - Brain-calc - calculate expression!
-#  - Brain-even - is number even or no?
-#  - Brain-gcd - find greatest common divider!
-#  - Brain-prime - is number prime or no?
-#  - Brain-progression - find missed number of progression!
+Brain-games is a package of 5 games:
+ - Brain-calc - calculate expression!
+ - Brain-even - is number even or no?
+ - Brain-gcd - find greatest common divider!
+ - Brain-prime - is number prime or no?
+ - Brain-progression - find missed number of progression!
 
 To install:
 
