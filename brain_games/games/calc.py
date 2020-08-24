@@ -18,5 +18,3 @@ def get_game_data():
     elif operation == '-':
         result = n1 - n2
     return (question, str(result))
-
-
