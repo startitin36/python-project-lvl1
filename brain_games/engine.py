@@ -7,11 +7,11 @@ CONGRAT_ON_WINNING = 'Congratulations, {}!'
 CORRECT_ANSWERS_TO_WIN = 3
 CORRECT_ANSWER = 'Correct!'
 ANSWER_REQUIRING = 'Your answer: '
-#WELCOME =
+WELCOME = 'Welcome to the Brain Games!'
 
 
 def engine(game):
-    print('Welcome to the Brain Games!')
+    print(WELCOME)
     print(game.INTRO, '\n')
     name = welcome_user()
     cor_ans = 0
@@ -19,15 +19,14 @@ def engine(game):
         (question, result) = game.get_game_data()
         print(question)
         ans = prompt.string(ANSWER_REQUIRING)
-        if ans == result:
-            print(CORRECT_ANSWER)
-            cor_ans += 1
-            if cor_ans == CORRECT_ANSWERS_TO_WIN:
-                print(CONGRAT_ON_WINNING.format(name))
-        else:
+        if ans != result:
             print(WRONG_ANSWER.format(ans, result))
             print(SUGGESTION_TO_TRY.format(name))
             break
+        print(CORRECT_ANSWER)
+        cor_ans += 1
+    if cor_ans == CORRECT_ANSWERS_TO_WIN:
+        print(CONGRAT_ON_WINNING.format(name))
 
 
 def welcome_user():
