@@ -9,7 +9,7 @@
 
 ##
 
-# Requirments:
+# Requirements:
 
 Python: 3.7+
 pip: the latest

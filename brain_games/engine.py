@@ -7,11 +7,11 @@ CONGRAT_ON_WINNING = 'Congratulations, {}!'
 CORRECT_ANSWERS_TO_WIN = 3
 CORRECT_ANSWER = 'Correct!'
 ANSWER_REQUIRING = 'Your answer: '
-WELCOME = 'Welcome to the Brain Games!'
+#WELCOME =
 
 
 def engine(game):
-    print(WELCOME)
+    print('Welcome to the Brain Games!')
     print(game.INTRO, '\n')
     name = welcome_user()
     cor_ans = 0
