@@ -13,9 +13,10 @@ WELCOME = 'Welcome to the Brain Games!'
 def engine(game):
     print(WELCOME)
     print(game.INTRO, '\n')
-    name = welcome_user()
-    cor_ans = 0
-    while cor_ans < CORRECT_ANSWERS_TO_WIN:
+    name = define_user_name()
+    print('Hello, {}!\n'.format(name))
+    correct_answer_counter = 0
+    while correct_answer_counter < CORRECT_ANSWERS_TO_WIN:
         (question, result) = game.get_game_data()
         print(question)
         ans = prompt.string(ANSWER_REQUIRING)
@@ -24,20 +25,11 @@ def engine(game):
             print(SUGGESTION_TO_TRY.format(name))
             break
         print(CORRECT_ANSWER)
-        cor_ans += 1
-    if cor_ans == CORRECT_ANSWERS_TO_WIN:
+        correct_answer_counter += 1
+    if correct_answer_counter == CORRECT_ANSWERS_TO_WIN:
         print(CONGRAT_ON_WINNING.format(name))
 
 
-def welcome_user():
+def define_user_name():
     name = prompt.string('May I have your name? ')
-    print('Hello, {}!\n'.format(name))
     return name
-
-
-def main(game):
-    engine(game)
-
-
-if __name__ == '__main__':
-    main()
